@@ -4,7 +4,7 @@ CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
 
-SOURCES = 
+SOURCES = ft_init_stack.c main.c ft_sort_a.c ft_sort_b.c 
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -15,7 +15,7 @@ LNAME = ft
 ${NAME}: ${OBJECTS}
 	${MAKE} -C ${LPATH}
 	${MAKE} -C ${LPATH} bonus
-	${CC} ${CFLAGS} -L ${LPATH} -l ${LNAME} ${SOURCES} -g
+	${CC} ${CFLAGS} ${SOURCES} -L ${LPATH} -l ${LNAME} -g
 
 clean:
 	${MAKE} -C ./libft clean
