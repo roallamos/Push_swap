@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:45:40 by rodralva          #+#    #+#             */
-/*   Updated: 2024/02/19 18:48:21 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/11 15:48:17 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,31 @@
 # include <unistd.h>
 # include <fcntl.h>
 
+/*typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;*/
+
+typedef struct	s_moves
+{
+	int	sa;
+	int	sb;
+	int	ss;
+	int pa;
+	int pb;
+	int ra;
+	int rb;
+	int rr;
+	int rra;
+	int rrb;
+	int rrr;
+}				t_moves;
+
 typedef struct s_list
 {
 	void			*content;
+	struct s_moves	moves;
 	struct s_list	*next;
 }	t_list;
 

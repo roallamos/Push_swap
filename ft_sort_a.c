@@ -5,6 +5,8 @@ void	sa(t_list **a)
 	void	*swap;
 	t_list	*next;
 
+	if (!a || !*a || !(*a)->next)
+		return ;
 	next = (*a)->next;
 	swap = next->next;
 	(*a)->next = swap;
@@ -25,11 +27,32 @@ void	pa(t_list **a, t_list **b)
 
 void	ra(t_list **a)
 {
-	t_list *lst;
+	t_list	*lst;
 
-	lst = *a;
-	while ((*a)->next)
-		*a = (*a)->next;
-	(*a)->next = lst;
-	lst->next = NULL;
+	if (!a || !*a)
+		return ;
+	lst = (*a)->next;
+	(*a)->next = NULL;
+	ft_lstadd_back(&lst, *a);
+	*a = lst;
+}
+
+void	rra(t_list **a)
+{
+	t_list	*lst;
+	t_list	*next;
+
+	if (!a || !*a)
+		return ;
+	lst = ft_lstlast(*a);
+	lst->next = *a;
+	*a = lst;
+	next = (*a)->next;
+	while(lst)
+	{
+		if(next->content == (*a)->content)
+			lst->next = NULL;
+		next = next->next;
+		lst = lst->next;
+	}
 }
