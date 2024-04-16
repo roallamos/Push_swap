@@ -15,17 +15,14 @@ LNAME = ft
 ${NAME}: ${OBJECTS}
 	${MAKE} -C ${LPATH}
 	${MAKE} -C ${LPATH} bonus
-	${MAKE} -C ./printf
 	${CC} ${CFLAGS} ${SOURCES} -L ${LPATH} -l ${LNAME} -g -o ${NAME}
 
 clean:
 	${MAKE} -C ./libft clean
-	${MAKE} -C ./printf clean
 	rm -f ${OBJECTS} ${BONUS_OBJ}
 
 fclean: clean
 	${MAKE} -C ./libft fclean
-	${MAKE} -C ./printf fclean
 	rm -f ${NAME}
 
 all: ${NAME}
@@ -33,4 +30,3 @@ all: ${NAME}
 re: fclean all
 
 .PHONY: all clean fclean re
-

@@ -37,7 +37,7 @@ typedef struct s_values
 	int rrr;
 }				t_moves;*/
 
-void	ft_init_stack(char **argv, t_list **a, int s);
+void	ft_init_stack(char **argv, t_list **a);
 void	ft_swap(t_list **a, t_list **b);
 void	sa(t_list **a, int p);
 void	sb(t_list **b, int p);
