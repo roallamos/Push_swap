@@ -1,10 +1,10 @@
-NAME = push_swap.out
+NAME = push_swap
 
 CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
 
-SOURCES = ft_init_stack.c main.c ft_sort_a.c ft_sort_b.c 
+SOURCES = ft_init_stack.c main.c ft_sort_a.c ft_sort_b.c ft_sort_both.c swap.c nose.c 
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -15,14 +15,17 @@ LNAME = ft
 ${NAME}: ${OBJECTS}
 	${MAKE} -C ${LPATH}
 	${MAKE} -C ${LPATH} bonus
-	${CC} ${CFLAGS} ${SOURCES} -L ${LPATH} -l ${LNAME} -g
+	${MAKE} -C ./printf
+	${CC} ${CFLAGS} ${SOURCES} -L ${LPATH} -l ${LNAME} -g -o ${NAME}
 
 clean:
 	${MAKE} -C ./libft clean
+	${MAKE} -C ./printf clean
 	rm -f ${OBJECTS} ${BONUS_OBJ}
 
 fclean: clean
 	${MAKE} -C ./libft fclean
+	${MAKE} -C ./printf fclean
 	rm -f ${NAME}
 
 all: ${NAME}

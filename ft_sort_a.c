@@ -1,6 +1,6 @@
 #include "pushswap.h"
 
-void	sa(t_list **a)
+void	sa(t_list **a, int p)
 {
 	void	*swap;
 	t_list	*next;
@@ -11,11 +11,13 @@ void	sa(t_list **a)
 	swap = next->next;
 	(*a)->next = swap;
 	ft_lstadd_front(a, next);
+	if (p)
+		printf("sa\n");
 }
 
 void	pa(t_list **a, t_list **b)
 {
-	t_list *keep;
+	t_list	*keep;
 
 	if (!b || !*b)
 		return ;
@@ -23,9 +25,10 @@ void	pa(t_list **a, t_list **b)
 	ft_lstadd_front(a, ft_lstnew(keep->content));
 	*b = keep->next;
 	free(keep);
+	printf("pa\n");
 }
 
-void	ra(t_list **a)
+void	ra(t_list **a, int p)
 {
 	t_list	*lst;
 
@@ -35,9 +38,11 @@ void	ra(t_list **a)
 	(*a)->next = NULL;
 	ft_lstadd_back(&lst, *a);
 	*a = lst;
+	if (p)
+		printf("ra\n");
 }
 
-void	rra(t_list **a)
+void	rra(t_list **a, int p)
 {
 	t_list	*lst;
 	t_list	*next;
@@ -48,11 +53,13 @@ void	rra(t_list **a)
 	lst->next = *a;
 	*a = lst;
 	next = (*a)->next;
-	while(lst)
+	while (lst)
 	{
-		if(next->content == (*a)->content)
+		if (next->content == (*a)->content)
 			lst->next = NULL;
 		next = next->next;
 		lst = lst->next;
 	}
+	if (p)
+		printf("rra\n");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
+/*   By: rodralva <rodralva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:22:59 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/11 16:22:49 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/16 18:29:17 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,34 @@ void	print_stack(t_list *a, t_list *b)
 	}
 }
 
-int main(int argc, char **argv)
+char **parse_arg(char **argv)
+{
+	char	**spl;
+
+	spl = ft_split(argv[1], ' ');
+	return(spl);
+}
+
+int	main(int argc, char **argv)
 {
 	t_list	*a;
 	t_list	*b;
+	char **spl;
 
 	a = NULL;
 	b = NULL;
-	atexit(leaks);
+	//	atexit(leaks);
 	if (argc == 1)
-		return (0);
-	ft_init_stack(argv, &a);
+		exit (2);
+	else if (argc == 2)
+	{
+		spl = parse_arg(argv);
+		ft_init_stack(spl, &a, 0);
+	}
+	else
+		ft_init_stack(argv, &a, 1);
 	ft_swap(&a, &b);
-	print_stack(a, b);
+//	print_stack(a, b);
 	ft_lstclear(&a, free);
 	ft_lstclear(&b, free);
 	return (0);

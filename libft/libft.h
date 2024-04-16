@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:45:40 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/11 15:48:17 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/15 10:52:15 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct	s_moves
 	int rra;
 	int rrb;
 	int rrr;
+	int	moves;
 }				t_moves;
 
 typedef struct s_list
