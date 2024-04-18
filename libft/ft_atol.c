@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_both.c                                     :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 14:22:55 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/18 11:25:51 by rodralva         ###   ########.fr       */
+/*   Created: 2024/01/09 16:59:18 by rodralva          #+#    #+#             */
+/*   Updated: 2024/04/17 14:09:03 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "libft.h"
 
-void	ss(t_list **a, t_list **b)
+long	ft_atol(const char *str)
 {
-	sa(a, 0);
-	sb(b, 0);
-	printf("ss\n");
-}
+	int		i;
+	long	nb;
+	int		s;
 
-void	rr(t_list **a, t_list **b)
-{
-	ra(a, 0);
-	rb(b, 0);
-	printf("rr\n");
-}
-
-void	rrr(t_list **a, t_list **b)
-{
-	rra(a, 0);
-	rrb(b, 0);
-	printf("rrr\n");
+	i = 0;
+	nb = 0;
+	s = 0;
+	while (str[i] == ' ' || (str[i] <= 13 && str[i] >= 9))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			s = 1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = nb * 10 + (str[i] - '0');
+		i++;
+	}
+	if (s == 1)
+		nb = -nb;
+	return (nb);
 }

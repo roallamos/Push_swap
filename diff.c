@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_both.c                                     :+:      :+:    :+:   */
+/*   diff.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 14:22:55 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/18 11:25:51 by rodralva         ###   ########.fr       */
+/*   Created: 2024/04/18 12:55:31 by rodralva          #+#    #+#             */
+/*   Updated: 2024/04/18 13:49:33 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	ss(t_list **a, t_list **b)
+int	ft_get_diff(t_list *a, t_list *b, int ab)
 {
-	sa(a, 0);
-	sb(b, 0);
-	printf("ss\n");
-}
+	int	min_diff;
+	int	diff;
 
-void	rr(t_list **a, t_list **b)
-{
-	ra(a, 0);
-	rb(b, 0);
-	printf("rr\n");
-}
-
-void	rrr(t_list **a, t_list **b)
-{
-	rra(a, 0);
-	rrb(b, 0);
-	printf("rrr\n");
+	min_diff = 0;
+	diff = 0;
+	while (a && b)
+	{
+		if (*((int *)a->content) > *((int *)b->content))
+			diff = *((int *)a->content) - *((int *)b->content);
+		if (min_diff == 0 || diff < min_diff)
+			min_diff = diff;
+		if (ab == 0)
+			a = a->next;
+		else
+			b = b->next;
+	}
+	return (min_diff);
 }
