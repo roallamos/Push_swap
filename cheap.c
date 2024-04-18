@@ -6,13 +6,13 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:57:33 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/18 18:41:35 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:43:22 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-static void	
+//static void	
 
 void	ft_cheapest(t_list *a, t_list *b, t_values *value)
 {
