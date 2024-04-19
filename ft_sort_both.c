@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:22:55 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/18 11:25:51 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:10:51 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ void	ss(t_list **a, t_list **b)
 {
 	sa(a, 0);
 	sb(b, 0);
-	printf("ss\n");
+	ft_printf("ss\n");
 }
 
 void	rr(t_list **a, t_list **b)
 {
 	ra(a, 0);
 	rb(b, 0);
-	printf("rr\n");
+	ft_printf("rr\n");
 }
 
 void	rrr(t_list **a, t_list **b)
 {
 	rra(a, 0);
 	rrb(b, 0);
-	printf("rrr\n");
+	ft_printf("rrr\n");
 }

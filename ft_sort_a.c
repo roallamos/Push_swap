@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:25:05 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/18 11:25:07 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:09:35 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	sa(t_list **a, int p)
 	(*a)->next = swap;
 	ft_lstadd_front(a, next);
 	if (p)
-		printf("sa\n");
+		ft_printf("sa\n");
 }
 
 void	pa(t_list **a, t_list **b)
@@ -37,7 +37,7 @@ void	pa(t_list **a, t_list **b)
 	ft_lstadd_front(a, ft_lstnew(keep->content));
 	*b = keep->next;
 	free(keep);
-	printf("pa\n");
+	ft_printf("pa\n");
 }
 
 void	ra(t_list **a, int p)
@@ -51,7 +51,7 @@ void	ra(t_list **a, int p)
 	ft_lstadd_back(&lst, *a);
 	*a = lst;
 	if (p)
-		printf("ra\n");
+		ft_printf("ra\n");
 }
 
 void	rra(t_list **a, int p)
@@ -73,5 +73,5 @@ void	rra(t_list **a, int p)
 		lst = lst->next;
 	}
 	if (p)
-		printf("rra\n");
+		ft_printf("rra\n");
 }
