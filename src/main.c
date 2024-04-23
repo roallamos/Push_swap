@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:22:59 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/18 11:19:24 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:59:05 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (argc == 1)
-	{
-		ft_putendl_fd("Error", 2);
-		exit (2);
-	}
+		return (0);
 	parse_arg(argv, &a);
 	ft_duplicated(a);
 	if (!ft_is_sorted(a))
