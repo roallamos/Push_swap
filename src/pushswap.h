@@ -6,15 +6,15 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:26:18 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/18 17:13:22 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:12:52 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSHSWAP_H
 # define PUSHSWAP_H
 
-# include "./libft/libft.h"
-# include "./printf/ft_printf.h"
+# include "../libft/libft.h"
+# include "../printf/ft_printf.h"
 
 typedef struct s_values
 {
