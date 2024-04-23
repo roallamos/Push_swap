@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 17:41:49 by rodralva          #+#    #+#             */
-/*   Updated: 2024/02/19 18:45:48 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:13:41 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	*ft_read(int fd, char *stc, char *ret)
 	int		bytes;
 
 	bytes = 1;
-	while (ft_strchr(ret, '\n') == 0 && bytes > 0)
+	while (ft_strchr_null(ret, '\n') == 0 && bytes > 0)
 	{
 		bytes = read(fd, stc, BUFFER_SIZE);
 		if (bytes < 0)
@@ -65,7 +65,7 @@ static char	*ft_retjoin(char *stc)
 {
 	char	*ret;
 
-	if (ft_strchr(stc, '\n'))
+	if (ft_strchr_null(stc, '\n'))
 	{
 		ret = ft_ret(stc);
 		ft_stc(stc);
@@ -87,7 +87,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	if (*stc)
 		ret = ft_retjoin(stc);
-	if (ft_strchr(ret, '\n'))
+	if (ft_strchr_null(ret, '\n'))
 		return (ret);
 	ret = ft_read(fd, stc, ret);
 	if (!ret)

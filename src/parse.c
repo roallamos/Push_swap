@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:09:32 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/23 14:05:46 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/23 16:23:57 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,20 @@ void	ft_check_split(char *spl)
 
 	i = 0;
 	j = 0;
-	while (spl[i + j])
+	while (spl[i] == '-' || spl[i] == '+')
 	{
-		if ((spl[i] < '0' || spl[i] > '9') && spl[i] != '-' && spl[i] != '+')
-			ft_terminate();
-		while (spl[i] == '-' || spl[i] == '+')
-		{
-			i++;
-			if (!spl[i] || (spl[i] < '0' || spl[i] > '9'))
-				ft_terminate();
-		}
-		while(spl[i + j] == '0')
-			j++;
-		while ((spl[i + j] >= '0' && spl[i + j] <= '9'))
-		{
-			i++;
-			if (spl[i + j] && (spl[i + j] < '0' || spl[i + j] > '9'))
-				ft_terminate();
-		}
-		if (i > 11)
+		i++;
+		if (!spl[i] || (spl[i] < '0' || spl[i] > '9'))
 			ft_terminate();
 	}
+	while (spl[i + j] == '0')
+		j++;
+	while ((spl[i + j] >= '0' && spl[i + j] <= '9'))
+		i++;
+	if (spl[i + j] && (spl[i + j] < '0' || spl[i + j] > '9'))
+		ft_terminate();
+	if (i > 11)
+		ft_terminate();
 }
 
 char	**parse_arg(char **argv, t_list **a)

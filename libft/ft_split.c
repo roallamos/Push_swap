@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 10:05:36 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/10 19:52:33 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:10:01 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,16 @@ static int	ft_wordcount(char const *s, char c)
 static int	ft_length(char const *s, char c)
 {
 	int	i;
+	int	n;
 
 	i = 0;
+	n = 0;
 	while (s[i] != c && s[i])
+	{
+		n++;
 		i++;
-	return (i);
+	}
+	return (n);
 }
 
 char	**ft_split(char const *s, char c)

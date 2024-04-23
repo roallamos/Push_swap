@@ -6,13 +6,13 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 18:47:13 by rodralva          #+#    #+#             */
-/*   Updated: 2024/02/19 18:47:52 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/02/21 18:16:10 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_null(const char *s, int c)
 {
 	int		i;
 	char	*t;
