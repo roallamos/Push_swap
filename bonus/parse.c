@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:09:32 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/23 17:59:07 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:52:12 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	**parse_arg(char **argv, t_list **a)
 	return (spl);
 }
 
-int	ft_is_sorted(t_list *a)
+int	ft_is_sorted(t_list *a, t_list *b)
 {
 	int	nb;
 
@@ -64,7 +64,7 @@ int	ft_is_sorted(t_list *a)
 	a = a->next;
 	while (a)
 	{
-		if (nb > *((int *)a->content))
+		if (nb > *((int *)a->content) || b)
 			return (0);
 		nb = *((int *)a->content);
 		a = a->next;

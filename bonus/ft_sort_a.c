@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:25:05 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/23 18:54:45 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:35:57 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	pa(t_list **a, t_list **b)
 	ft_lstadd_front(a, ft_lstnew(keep->content));
 	*b = keep->next;
 	free(keep);
-	ft_printf("pa\n");
 }
 
 void	ra(t_list **a)

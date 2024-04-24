@@ -6,24 +6,29 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 16:42:28 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/23 20:22:19 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:53:03 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	ft_read(t_list **sort)
+void	ft_read(t_list **a, t_list **b)
 {
-	char *content;
-//	int	fd = open("text.txt", O_RDONLY);
+	char	*content;
 
-	content = NULL;
-	while (content || !*sort)
+	content = get_next_line(0);
+	while (content)
 	{
-		content = get_next_line(0);
 		if (content)
-			ft_lstadd_back(sort, ft_lstnew(content));
+			ft_sort(a, b, content);
+		free(content);
+		content = get_next_line(0);
 	}
+	free(content);
+	if (ft_is_sorted(*a, *b))
+		ft_printf("OK");
+	else
+		ft_printf("KO");
 }
 
 void	ft_terminate(void)
@@ -32,23 +37,19 @@ void	ft_terminate(void)
 	exit (2);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_list	*a;
 	t_list	*b;
-	t_list	*sort;
 
 	a = NULL;
 	b = NULL;
-	sort = NULL;
 	if (argc == 1)
 		return (0);
 	parse_arg(argv, &a);
 	ft_duplicated(a);
-	ft_read(&sort);
-	ft_sort(&a, &b, sort);
+	ft_read(&a, &b);
 	ft_lstclear(&a, free);
 	ft_lstclear(&b, free);
-	ft_lstclear(&sort, free);
 	return (0);
 }

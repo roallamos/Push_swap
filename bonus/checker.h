@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 16:43:21 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/23 18:52:48 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:52:38 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ void	rrb(t_list **b);
 void	rrr(t_list **a, t_list **b);
 void	ft_terminate(void);
 void	ft_check_split(char *spl);
-int		ft_is_sorted(t_list *a);
+int		ft_is_sorted(t_list *a, t_list *b);
 void	ft_duplicated(t_list *a);
 char	**parse_arg(char **argv, t_list **a);
 int		ft_max_number(t_list *b);
 int		ft_min_number(t_list *b);
-void	ft_sort(t_list **a, t_list **b, t_list *sort);
+void	ft_sort(t_list **a, t_list **b, char *move);
 
 #endif
