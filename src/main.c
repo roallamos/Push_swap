@@ -6,16 +6,11 @@
 /*   By: rodralva <rodralva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:22:59 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/23 16:23:37 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/04/30 15:26:48 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
-void	leaks(void)
-{
-	system("leaks -q push_swap");
-}
 
 void	ft_terminate(void)
 {

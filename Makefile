@@ -24,7 +24,7 @@ ${NAME}: ${OBJECTS}
 	${MAKE} -C ${LPATH}
 	${MAKE} -C ./printf
 	${MAKE} -C ${LPATH} bonus
-	${CC} ${CFLAGS} ${SOURCES} -L ${LPATH} -l ${LNAME} -L ./printf -l ftprintf -o ${NAME}
+	${CC} ${CFLAGS} ${SOURCES} -L ${LPATH} -l ${LNAME} -L ./printf -l ftprintf -fsanitize=leak -o ${NAME}
 
 clean:
 	${MAKE} -C ./libft clean
