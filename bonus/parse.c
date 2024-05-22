@@ -6,7 +6,7 @@
 /*   By: rodralva <rodralva@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:09:32 by rodralva          #+#    #+#             */
-/*   Updated: 2024/04/24 11:52:12 by rodralva         ###   ########.fr       */
+/*   Updated: 2024/05/22 10:59:28 by rodralva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ int	ft_is_sorted(t_list *a, t_list *b)
 {
 	int	nb;
 
+	if (!a)
+		return (0);
 	nb = *((int *)a->content);
 	a = a->next;
 	while (a)
